@@ -1,0 +1,142 @@
+html,body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+/* Header*/
+
+.Header_Fixed_Navbar{
+    background-color: rgba(0, 0, 0, 0.868);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: auto;
+    position: fixed;
+}
+.Logo_x_Academy{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-family: sans-serif;
+    line-height: 80px;
+    font-size: 25px;
+    font-weight: bold;
+    width: 20%;
+}
+
+.Logo{
+    width: 70px;
+}
+.X{
+   width: 30px;
+}
+
+.Main_Navigation{
+    width: 32%;
+    display: flex;
+    justify-content: space-around;
+}
+.Main_Navigation a{
+    text-decoration: none;
+    color: white;
+    font-family: sans-serif;
+    line-height: 80px;
+    font-size: 15px;
+    transition: 0.2s all ease-in-out;
+    text-shadow: 0px 0px 1px white;
+}
+.Main_Navigation a:hover{
+    color: rgb(95, 170, 245);
+}
+.Academy_Text{
+    color: white;
+    font-family: sans-serif;
+    padding-top: 10px;
+    font-size: 125%;
+}
+.Mobile_Dropdown_Menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 50;
+}
+.shortline{
+    width: 13px;
+    height: 10px;
+}
+.bigline{
+    width: 30px;
+    height: 10px;
+}
+
+/* Header*/
+
+
+/* Main*/
+.Tecnological_Education_Container{
+    width: 100%;
+    height: 900px;
+}
+.Gap{
+    width: 100%;
+    height: 80px;
+}
+.Background_Content{
+    width: 100%;
+    height: 375px;
+    background: url(img/Meeting_Background.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
+.TBC_x_USAID_Text{
+    display: flex;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: white;
+    width: 70%;
+}
+.middle{
+    display: flex;
+    flex-direction: column;
+}
+.left_space{
+    width: 25%;
+}
+.Topic{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(38, 38, 38);
+    color: white;
+}
+.Edu_paragraph{
+    max-width: 65%;
+    letter-spacing: 2px;
+    font-family: sans-serif;
+}
+.More{
+    margin-right: 57%;
+    text-decoration: none;
+    color: rgb(95, 170, 245);
+    font-family: sans-serif;
+    font-size: 22px;
+    padding-bottom: 40px;
+    transition: 0.2s all ease-in-out;
+}
+.More:hover{
+    color: rgb(206, 199, 199);
+}
+
+/* Main*/
