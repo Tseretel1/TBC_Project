@@ -1,142 +1,275 @@
-html,body{
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    scroll-behavior: smooth;
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
 }
 
 /* Header*/
 
-.Header_Fixed_Navbar{
-    background-color: rgba(0, 0, 0, 0.868);
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 100%;
-    height: auto;
-    position: fixed;
+.Header_Fixed_Navbar {
+  background-color: rgba(0, 0, 0, 0.868);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  z-index: 20;
 }
-.Logo_x_Academy{
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: white;
-    font-family: sans-serif;
-    line-height: 80px;
-    font-size: 25px;
-    font-weight: bold;
-    width: 20%;
-}
-
-.Logo{
-    width: 70px;
-}
-.X{
-   width: 30px;
-}
-
-.Main_Navigation{
-    width: 32%;
+.Header_Nav_align{
+    width: 90%;
     display: flex;
     justify-content: space-around;
 }
-.Main_Navigation a{
-    text-decoration: none;
-    color: white;
-    font-family: sans-serif;
-    line-height: 80px;
-    font-size: 15px;
-    transition: 0.2s all ease-in-out;
-    text-shadow: 0px 0px 1px white;
+.Logo_x_Academy {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  font-family: sans-serif;
+  line-height: 80px;
+  font-size: 25px;
+  font-weight: bold;
 }
-.Main_Navigation a:hover{
-    color: rgb(95, 170, 245);
+
+.Logo {
+  width: 65px;
 }
-.Academy_Text{
-    color: white;
-    font-family: sans-serif;
-    padding-top: 10px;
-    font-size: 125%;
+.X {
+  width: 30px;
 }
-.Mobile_Dropdown_Menu{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    z-index: 50;
+.Main_Navigation a {
+  text-decoration: none;
+  color: white;
+  font-family: sans-serif;
+  line-height: 80px;
+  font-size: 15px;
+  transition: 0.2s all ease-in-out;
+  text-shadow: 0px 0px 1px white;
+  padding-right: 40px;
 }
-.shortline{
-    width: 13px;
-    height: 10px;
+.Main_Navigation a:hover {
+  color: rgb(95, 170, 245);
 }
-.bigline{
-    width: 30px;
-    height: 10px;
+.Academy_Text {
+  color: white;
+  font-family: sans-serif;
+  padding-top: 10px;
+  font-size: 125%;
+}
+.Mobile_Dropdown_Menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 50;
+}
+.shortline {
+  width: 23px;
+  height: 10px;
+}
+.bigline {
+  width: 40px;
+  height: 10px;
 }
 
 /* Header*/
 
 
 /* Main*/
-.Tecnological_Education_Container{
-    width: 100%;
-    height: 900px;
+.Tecnological_Education_Container {
+  width: 100%;
+  height: auto;
 }
-.Gap{
-    width: 100%;
-    height: 80px;
+.Gap {
+  width: 100%;
+  height: 80px;
 }
-.Background_Content{
-    width: 100%;
-    height: 375px;
-    background: url(img/Meeting_Background.webp);
-    background-repeat: no-repeat;
-    background-size: cover;
+.Background_Content {
+  width: 100%;
+  height: 375px;
+  background: url(img/Meeting_Background.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.TBC_x_USAID_Text {
+  display: flex;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: white;
+  width: 65%;
+}
+.middle {
+  display: flex;
+  flex-direction: column;
+}
+.left_space {
+  width: 25%;
+}
+.Topic {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(38, 38, 38);
+  color: white;
+}
+.Topic_simetry {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.Edu_paragraph {
+  max-width: 100%;
+  letter-spacing: 2px;
+  font-family: sans-serif;
+  line-height: 1.5;
+}
+.More {
+  text-decoration: none;
+  color: rgb(95, 170, 245);
+  font-family: sans-serif;
+  font-size: 22px;
+  padding-bottom: 40px;
+  transition: 0.2s all ease-in-out;
+}
+.More:hover {
+  color: rgb(206, 199, 199);
+}
+.container22222{
     display: flex;
-    align-items: center;
-}
-.TBC_x_USAID_Text{
-    display: flex;
-    font-family: sans-serif;
-    font-weight: bold;
-    color: white;
-    width: 70%;
-}
-.middle{
-    display: flex;
-    flex-direction: column;
-}
-.left_space{
-    width: 25%;
-}
-.Topic{
     width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    background-color: rgb(38, 38, 38);
-    color: white;
+    background-color: rgb(23, 22, 22);
 }
-.Edu_paragraph{
-    max-width: 65%;
-    letter-spacing: 2px;
-    font-family: sans-serif;
+.aqua{
+    display: flex;
+    width: 78%;
+    height: auto;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px;
+
 }
-.More{
-    margin-right: 57%;
-    text-decoration: none;
-    color: rgb(95, 170, 245);
-    font-family: sans-serif;
-    font-size: 22px;
-    padding-bottom: 40px;
-    transition: 0.2s all ease-in-out;
-}
-.More:hover{
-    color: rgb(206, 199, 199);
+/* Main*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 801px) {
+  .Main_Navigation {
+    display: none;
+  }
+
+  .Mobile_Dropdown_Menu {
+    display: flex;
+  }
+
+  .Container_Title {
+    font-size: 35px;
+  }
+
+  .Container_Title2 {
+    font-size: 18px;
+  }
+
+  .Edu_paragraph {
+    font-size: 18px;
+  }
+  .More{
+    font-size: 18px;
+  }
+  .Background_Content {
+    height: 275px;
+  }
+
+  .Mobile_Dropdown_Menu {
+    padding-right: 5%;
+  }
+
+  .Logo_x_Academy {
+    padding-left: 5%;
+  }
 }
 
-/* Main*/
+@media screen and (min-width: 801px) {
+  .Main_Navigation {
+    display: flex;
+  }
+
+  .Mobile_Dropdown_Menu {
+    display: none;
+  }
+
+  .Container_Title {
+    font-size: 45px;
+  }
+
+  .Container_Title2 {
+    font-size: 28px;
+  }
+
+  .Edu_paragraph {
+    font-size: 28px;
+    padding: 40px;
+  }
+  .More{
+    padding-left: 40px;
+  }
+  .Background_Content {
+    height: 375px;
+  }
+
+  .Mobile_Dropdown_Menu {
+    padding-right: 0%;
+  }
+
+  .Logo_x_Academy {
+    padding-left: 0%;
+  }
+}
