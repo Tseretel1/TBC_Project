@@ -145,20 +145,31 @@ body {
 .More:hover {
   color: rgb(206, 199, 199);
 }
-.container22222{
+.Educational_Cources{
     display: flex;
     width: 100%;
-    justify-content: center;
     background-color: rgb(23, 22, 22);
+    flex-direction: column;
+    align-items: center;
 }
-.aqua{
+.Cources_Title{
+    width: 65%;
+    display: flex;
+}
+.Cources_Title_txt{
+    color: white;
+    font-family: sans-serif;
+    font-size: 28px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.INfo_Cards{
     display: flex;
     width: 78%;
     height: auto;
     justify-content: center;
     flex-wrap: wrap;
     padding: 10px;
-
 }
 /* Main*/
 

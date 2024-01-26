@@ -242,8 +242,8 @@ function Cards() {
     DataContainer.appendChild(Registration);
     DataContainer.appendChild(arrowDiv);
 
-    const aquaDiv = document.querySelector(".aqua");
-    aquaDiv.appendChild(Card);
+    const INfo_Cards = document.querySelector(".INfo_Cards");
+    INfo_Cards.appendChild(Card);
   });
 }
 
