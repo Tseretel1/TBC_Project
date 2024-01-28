@@ -16,7 +16,6 @@ document.styleSheets[0].insertRule(
 );
 window.onscroll = scrollFunction;
 
-
 // Edu-Paragraph
 function Paragraph() {
   function insertParagraph() {
@@ -73,7 +72,6 @@ function deleteDropdown() {
   }
 }
 
-
 // Navigation Button! This Code controls creating and deleting sidebar.
 function toggleDropdownMenu() {
   const dropdownMenu = document.querySelector(".Mobile_Dropdown_Menu");
@@ -90,9 +88,13 @@ function toggleDropdownMenu() {
   shortlines.forEach((shortline, index) => {
     const isRotatedLine =
       shortline.style.transform &&
-      shortline.style.transform.includes(`rotate(${90 * (index % 2 ? -1 : 1)}deg)`);
+      shortline.style.transform.includes(
+        `rotate(${90 * (index % 2 ? -1 : 1)}deg)`
+      );
     shortline.style.transition = "transform 0.3s ease-in-out";
-    shortline.style.transform = isRotatedLine ? "" : `rotate(${90 * (index % 2 ? -1 : 1)}deg)`;
+    shortline.style.transform = isRotatedLine
+      ? ""
+      : `rotate(${90 * (index % 2 ? -1 : 1)}deg)`;
     if (isRotatedLine) {
       deleteDropdown();
     } else {
@@ -108,15 +110,9 @@ function toggleDropdownMenu() {
   longline.style.transform = isRotatedLongLine ? "" : "rotate(45deg)";
 }
 
-document.querySelector(".Mobile_Dropdown_Menu").addEventListener("click", toggleDropdownMenu);
-
-
-
-
-
-
-
-
+document
+  .querySelector(".Mobile_Dropdown_Menu")
+  .addEventListener("click", toggleDropdownMenu);
 
 // Cards Creation! Thic creates informational ` cards based on data.
 function Cards() {
@@ -126,63 +122,65 @@ function Cards() {
       Name: "IOS Development",
       Reg: "რეგისტრაცია დასრულებულია",
       Detail: "კურსის დეტალები",
-      link_To_Cource : "https://www.tbcacademy.ge/usaid/ios-development",
+      link_To_Cource: "https://www.tbcacademy.ge/usaid/ios-development",
     },
     {
       imgSource: "img/Cources/react.webp",
       Name: "React",
       Reg: "რეგისტრაცია დასრულებულია",
       Detail: "კურსის დეტალები",
-      link_To_Cource :'https://www.tbcacademy.ge/usaid/react',
+      link_To_Cource: "https://www.tbcacademy.ge/usaid/react",
     },
     {
       imgSource: "img/Cources/python.webp",
       Name: "Intro to Python",
       Reg: "რეგისტრაცია დასრულებულია",
       Detail: "კურსის დეტალები",
-      link_To_Cource :'https://www.tbcacademy.ge/usaid/python-basic',
+      link_To_Cource: "https://www.tbcacademy.ge/usaid/python-basic",
     },
     {
       imgSource: "img/Cources/advancedpython.webp",
       Name: "Advanced Python",
       Reg: "რეგისტრაცია დასრულებულია",
       Detail: "კურსის დეტალები",
-      link_To_Cource :'https://www.tbcacademy.ge/usaid/python-advance',
+      link_To_Cource: "https://www.tbcacademy.ge/usaid/python-advance",
     },
     {
       imgSource: "img/Cources/cybersecuryty.webp",
       Name: "Advanced Cybersecurity Course",
       Reg: "რეგისტრაცია დასრულებულია",
       Detail: "კურსის დეტალები",
-      link_To_Cource :'https://www.tbcacademy.ge/usaid/information-security-advance',
+      link_To_Cource:
+        "https://www.tbcacademy.ge/usaid/information-security-advance",
     },
     {
       imgSource: "img/Cources/ToT.webp",
       Name: "ToT - Training of Trainers",
       Reg: "რეგისტრაცია დასრულებულია",
       Detail: "კურსის დეტალები",
-      link_To_Cource :'https://www.tbcacademy.ge/usaid/training-of-trainers',
+      link_To_Cource: "https://www.tbcacademy.ge/usaid/training-of-trainers",
     },
     {
       imgSource: "img/Cources/blokchain.webp",
       Name: "Blockchain",
       Reg: "რეგისტრაცია დასრულებულია",
       Detail: "კურსის დეტალები",
-      link_To_Cource :'https://www.tbcacademy.ge/usaid/blockchain',
+      link_To_Cource: "https://www.tbcacademy.ge/usaid/blockchain",
     },
     {
       imgSource: "img/Cources/devops.webp",
       Name: "DevOps",
       Reg: "რეგისტრაცია დასრულებულია",
       Detail: "კურსის დეტალები",
-      link_To_Cource :'https://www.tbcacademy.ge/usaid/devops',
+      link_To_Cource: "https://www.tbcacademy.ge/usaid/devops",
     },
     {
       imgSource: "img/Cources/informationsecurity.webp",
       Name: "Information Security Governance",
       Reg: "რეგისტრაცია დასრულებულია",
       Detail: "კურსის დეტალები",
-      link_To_Cource :'https://www.tbcacademy.ge/usaid/information-security-basic',
+      link_To_Cource:
+        "https://www.tbcacademy.ge/usaid/information-security-basic",
     },
   ];
   CardDataObject.forEach((data) => {
@@ -197,7 +195,7 @@ function Cards() {
     Card.style.zIndex = "0";
     Card.style.borderRadius = "5px";
     Card.style.padding = "0";
-    Card.style.margin = '20px'
+    Card.style.margin = "20px";
 
     const ImgCard = document.createElement("img");
     ImgCard.style.width = "100%";
@@ -221,35 +219,33 @@ function Cards() {
     const CourseName = document.createElement("p");
     CourseName.textContent = data.Name;
     CourseName.style.color = "white";
-    CourseName.style.fontSize = '18px';
-    CourseName.style.maxWidth ='90%';
+    CourseName.style.fontSize = "18px";
+    CourseName.style.maxWidth = "90%";
 
     const Registration = document.createElement("p");
     Registration.textContent = data.Reg;
     Registration.style.color = "white";
 
-
     const arrowIMG = document.createElement("img");
     arrowIMG.style.width = "20px";
-    arrowIMG.src = 'img/Icons&Logos/BlueArrow.png'
-    arrowIMG.style.paddingRight = '10px'
+    arrowIMG.src = "img/Icons&Logos/BlueArrow.png";
+    arrowIMG.style.paddingRight = "10px";
 
     const Details = document.createElement("a");
     Details.textContent = data.Detail;
     Details.href = data.link_To_Cource;
     Details.style.color = "rgb(95, 170, 245)";
-    Details.style.fontWeight = '600'
+    Details.style.fontWeight = "600";
 
     Details.style.textDecoration = "none";
 
     const arrowDiv = document.createElement("div");
-    arrowDiv.style.display = 'flex';
-    arrowDiv.style.alignItems = 'center';
+    arrowDiv.style.display = "flex";
+    arrowDiv.style.alignItems = "center";
     arrowDiv.style.paddingTop = "80px";
 
     arrowDiv.appendChild(arrowIMG);
     arrowDiv.appendChild(Details);
-
 
     DataContainer.appendChild(CourseName);
     DataContainer.appendChild(Registration);
@@ -260,14 +256,6 @@ function Cards() {
   });
 }
 Cards();
-
-
-
-
-
-
-
-
 
 // slider! this code controls slider functional.
 
@@ -348,4 +336,87 @@ const displayPartnerImages = (slideNumber) => {
 
 createSlider();
 
-//
+
+// Questions! this code creates a question based on data.
+const Question_Generator = () => {
+  const Questions = [
+    {
+      Question: "როგორ ხდება კურსებზე რეგისტრაცია და შერჩევა?",
+      Question_heading: "კურსზე რეგისტრაციისთვის უნდა გაიარო რამდენიმე ეტაპი:",
+      Answer: `კურსზე რეგისტრაციისთვის უნდა გაიარო რამდენიმე ეტაპი: I ეტაპი - პირველ ეტაპზე
+    საჭიროა, შეავსო სასურველი კურსისთვის განკუთვნილი სარეგისტრაციო ფორმა,
+    რომელიც განთავსებულია კურსის შიდა გვერდზე. კურსზე რეგისტრაციის დასრულების
+    შემდეგ დაიწყება შემოსული განცხადებების გადარჩევა. II ეტაპი - შერჩევის მეორე
+    ეტაპი კურსების მიხედვით განსხვავებულია, ზოგიერთი კურსისთვის მოიცავს
+    პრე-ტესტს, ზოგიერთ კურსზე კი უნარების ტესტს, სადაც მინიმალური ზღვარის
+    გადალახვის შემთხვევაში გადახვალ შერჩევის შემდეგ ეტაპზე. III ეტაპი - მესამე
+    ეტაპი კურსების მიხედვით განსხვავდება: Advance კურსებზე, სადაც მოითხოვება
+    გარკვეული ტექნიკური ცოდნა, მონაწილეებმა უნდა დაწერონ ტექნიკური ტესტი ცოდნის
+    დონის შესამოწმებლად, ხოლო კურსებზე, სადაც რაიმე ტიპის წინასწარი ცოდნა
+    მოთხოვნილი არ არის უნდა შეასრულოთ ტექნიკური დავალება, რაც თქვენი კვლევისა და
+    თვითსწავლის უნარს ამოწმებს. IV ეტაპი - შერჩევის ბოლო მეოთხე ეტაპი მოიცავს
+    გასაუბრებას შესარჩევ კომისიასთან. გასაუბრების წარმატებით გავლის შემთხვევაში
+    ჩაირიცხებით კურსზე და გაფორმდება შესაბამისი ხელშეკრულება. * სანამ კურსზე
+    დარეგისტრირდები მნიშვნელოვანია, ყურადღებით წაიკითხო კურსის აღწერა, ნახო რას
+    ისწავლი კურსის განმავლობაში და გაიგო გააჩნია თუ არა კურსს დასწრების
+    წინაპირობა.`,
+      Question_Footer:
+        "* სანამ კურსზე დარეგისტრირდები მნიშვნელოვანია, ყურადღებით წაიკითხო კურსის აღწერა, ნახო რას ისწავლი კურსის განმავლობაში და გაიგო გააჩნია თუ არა კურსს დასწრების წინაპირობა. ",
+    },
+    {
+      Question: "შემიძლია თუ არა ერთზე მეტ კურსზე რეგისტრაცია?",
+      Question_heading: "",
+      Answer: `TBC X USAID ტექნოლოგიური განათლებისთვის პროგრამაში თითოეულ კანდიდატს აქვს მხოლოდ ერთი კურსის გავლის შესაძლებლობა. გარდა Information Security და Python კურსებისა, სადაც Basic დონის გავლის შემდეგ შესაძლებელია სწავლის გაგრძელება Advance დონეზე.`,
+      Question_Footer: "",
+    },
+    {
+      Question: "რა ღირს სწავლა პროგრამის ფარგლებში?",
+      Question_heading: "",
+      Answer: `პროგრამის ფარგლებში კურსებზე სწავლა სრულიად დაფინანსებულია თიბისი ბანკისა და USAID-ის მიერ.`,
+      Question_Footer: "",
+    },
+  ];
+
+  Questions.forEach((question) => {
+    const Q_Div = document.createElement("div");
+    Q_Div.classList.add("Question");
+    const Main_Question = document.createElement("Main_Question");
+    Main_Question.textContent = question.Question;
+
+
+    const DownArrow = document.createElement("img");
+    DownArrow.classList.add("DownArrow");
+    DownArrow.src = "img/Icons&Logos/Left_arrow.png";
+
+    const Answe_Container = document.createElement("div");
+    Answe_Container.classList.add("Answe_Container");
+    Answe_Container.style.display = "none";
+
+    const Headquestion = document.createElement("p");
+    Headquestion.textContent = question.Question_heading;
+
+    const Answer = document.createElement("p");
+    Answer.textContent = question.Answer;
+    Answer.classList.add('PAnswer');
+
+    const Question_Foot = document.createElement("p");
+    Question_Foot.textContent = question.Question_Footer;
+
+    Answe_Container.appendChild(Headquestion);
+    Answe_Container.appendChild(Answer);
+    Answe_Container.appendChild(Question_Foot);
+
+    Main_Question.appendChild(DownArrow);
+    Q_Div.appendChild(Main_Question);
+    Q_Div.appendChild(Answe_Container);
+
+    Q_Div.addEventListener("click", () => {
+      Answe_Container.style.display =
+        Answe_Container.style.display === "none" ? "block" : "none";
+    });
+
+    var item = document.querySelector(".Questions_js");
+    item.appendChild(Q_Div);
+  });
+};
+Question_Generator();
