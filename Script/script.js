@@ -40,10 +40,9 @@ function createDropdownMenu() {
   menu.style.top = "0";
   menu.style.right = "0";
   menu.style.backgroundColor = "rgb(40, 40, 40)";
-  menu.style.padding = "10px";
+  menu.style.paddingRight = "30px";
   menu.style.width = "200px";
   menu.style.zIndex = "0";
-
   const linksData = [
     { href: "https://www.tbcacademy.ge/", name: "მთავარი" },
     { href: "https://www.tbcacademy.ge/it-academy", name: "TBC IT" },
@@ -58,7 +57,8 @@ function createDropdownMenu() {
     link.style.display = "block";
     link.style.color = "white";
     link.style.textDecoration = "none";
-    link.style.marginTop = "50px";
+    link.style.marginTop = "100px";
+    link.style.fontSize = "20px";
     menu.appendChild(link);
   });
   document.body.appendChild(menu);
@@ -74,7 +74,7 @@ function deleteDropdown() {
 
 // Navigation Button! This Code controls creating and deleting sidebar.
 function toggleDropdownMenu() {
-  const dropdownMenu = document.querySelector(".Mobile_Dropdown_Menu");
+  const dropdownMenu = document.querySelector(".bigline");
   const isRotatedMenu =
     dropdownMenu.style.transform &&
     dropdownMenu.style.transform.includes("rotate(-45deg)");
@@ -97,8 +97,10 @@ function toggleDropdownMenu() {
       : `rotate(${90 * (index % 2 ? -1 : 1)}deg)`;
     if (isRotatedLine) {
       deleteDropdown();
+      document.querySelector('body').style.opacity = '1';
     } else {
       createDropdownMenu();
+      document.querySelector('body').style.opacity = '';
     }
   });
 
@@ -185,7 +187,7 @@ function Cards() {
   ];
   CardDataObject.forEach((data) => {
     const Card = document.createElement("div");
-    Card.classList.add("Card");
+    Card.classList.add("CardREwoke");
     Card.style.display = "flex";
     Card.style.flexDirection = "column";
     Card.style.width = "300px";
@@ -198,6 +200,7 @@ function Cards() {
     Card.style.margin = "20px";
 
     const ImgCard = document.createElement("img");
+    Card.classList.add("ImgCard");
     ImgCard.style.width = "100%";
     ImgCard.style.height = "200px";
     ImgCard.src = data.imgSource;
@@ -207,6 +210,7 @@ function Cards() {
     Card.appendChild(ImgCard);
 
     const DataContainer = document.createElement("div");
+    Card.classList.add("DataContainer");
     DataContainer.style.width = "100%";
     DataContainer.style.height = "100%";
     DataContainer.style.display = "flex";
@@ -217,21 +221,25 @@ function Cards() {
     Card.appendChild(DataContainer);
 
     const CourseName = document.createElement("p");
+    Card.classList.add("CourceName");
     CourseName.textContent = data.Name;
     CourseName.style.color = "white";
     CourseName.style.fontSize = "18px";
     CourseName.style.maxWidth = "90%";
 
     const Registration = document.createElement("p");
+    Card.classList.add("Registration");
     Registration.textContent = data.Reg;
     Registration.style.color = "white";
 
     const arrowIMG = document.createElement("img");
+    Card.classList.add("ArrowImage");
     arrowIMG.style.width = "20px";
     arrowIMG.src = "img/Icons&Logos/BlueArrow.png";
     arrowIMG.style.paddingRight = "10px";
 
     const Details = document.createElement("a");
+    Card.classList.add("Details");
     Details.textContent = data.Detail;
     Details.href = data.link_To_Cource;
     Details.style.color = "rgb(95, 170, 245)";
@@ -240,6 +248,7 @@ function Cards() {
     Details.style.textDecoration = "none";
 
     const arrowDiv = document.createElement("div");
+    Card.classList.add("Arrowdiv");
     arrowDiv.style.display = "flex";
     arrowDiv.style.alignItems = "center";
     arrowDiv.style.paddingTop = "80px";
@@ -376,47 +385,53 @@ const Question_Generator = () => {
       Question_Footer: "",
     },
   ];
-
   Questions.forEach((question) => {
     const Q_Div = document.createElement("div");
     Q_Div.classList.add("Question");
-    const Main_Question = document.createElement("Main_Question");
+  
+    const Main_Question = document.createElement("div");
+    Main_Question.classList.add("Main_Question");
     Main_Question.textContent = question.Question;
-
-
+  
     const DownArrow = document.createElement("img");
     DownArrow.classList.add("DownArrow");
     DownArrow.src = "img/Icons&Logos/Left_arrow.png";
-
+  
     const Answe_Container = document.createElement("div");
     Answe_Container.classList.add("Answe_Container");
     Answe_Container.style.display = "none";
-
+    Answe_Container.style.transition = "display 0.5s ease-in-out";
+  
     const Headquestion = document.createElement("p");
     Headquestion.textContent = question.Question_heading;
-
+  
     const Answer = document.createElement("p");
     Answer.textContent = question.Answer;
     Answer.classList.add('PAnswer');
-
+  
     const Question_Foot = document.createElement("p");
     Question_Foot.textContent = question.Question_Footer;
-
+  
     Answe_Container.appendChild(Headquestion);
     Answe_Container.appendChild(Answer);
     Answe_Container.appendChild(Question_Foot);
-
+  
     Main_Question.appendChild(DownArrow);
     Q_Div.appendChild(Main_Question);
     Q_Div.appendChild(Answe_Container);
-
+  
     Q_Div.addEventListener("click", () => {
       Answe_Container.style.display =
         Answe_Container.style.display === "none" ? "block" : "none";
+  
+      DownArrow.style.transform = DownArrow.style.transform
+        ? ""
+        : "rotate(180deg)";
     });
-
+  
     var item = document.querySelector(".Questions_js");
     item.appendChild(Q_Div);
   });
+  
 };
 Question_Generator();
