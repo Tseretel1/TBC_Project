@@ -19,7 +19,8 @@ URL for Hosted Website: https://giorgitsereteli.netlify.app/
    about each part of codes functionality, so it's easyer for other developers to
    understand projects functionality!.
    
-
+7. In my project, every button that navigates to another page is working properly, just becouse of
+   websites Pefection.
 
 
 ## How To Run Project
