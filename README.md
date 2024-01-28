@@ -1,5 +1,5 @@
 
-# TBC x USAID Technical Task
+# TBC x USAID
 URL for Hosted Website: https://giorgitsereteli.netlify.app/
 
 
