@@ -16,6 +16,7 @@ document.styleSheets[0].insertRule(
 );
 window.onscroll = scrollFunction;
 
+
 // Edu-Paragraph
 function Paragraph() {
   function insertParagraph() {
@@ -59,7 +60,6 @@ function createDropdownMenu() {
     link.style.color = "white";
     link.style.textDecoration = "none";
     link.style.marginTop = "50px";
-    link.style.fontFamily = "sans-serif";
     menu.appendChild(link);
   });
   document.body.appendChild(menu);
@@ -73,30 +73,41 @@ function deleteDropdown() {
   }
 }
 
+
 // Navigation Button! This Code controls creating and deleting sidebar.
 function toggleDropdownMenu() {
   const dropdownMenu = document.querySelector(".Mobile_Dropdown_Menu");
   const isRotatedMenu =
     dropdownMenu.style.transform &&
-    dropdownMenu.style.transform.includes("rotate(45deg)");
+    dropdownMenu.style.transform.includes("rotate(-45deg)");
 
   dropdownMenu.style.transition = "transform 0.3s ease-in-out";
-  dropdownMenu.style.transform = isRotatedMenu ? "" : "rotate(45deg)";
+  dropdownMenu.style.transform = isRotatedMenu ? "" : "rotate(-45deg)";
 
   const shortlines = document.querySelectorAll(".shortline");
-  shortlines.forEach((shortline) => {
+  const longline = document.querySelector(".longline");
+
+  shortlines.forEach((shortline, index) => {
     const isRotatedLine =
       shortline.style.transform &&
-      shortline.style.transform.includes("rotate(90deg)");
+      shortline.style.transform.includes(`rotate(${90 * (index % 2 ? -1 : 1)}deg)`);
     shortline.style.transition = "transform 0.3s ease-in-out";
-    shortline.style.transform = isRotatedLine ? "" : "rotate(90deg)";
+    shortline.style.transform = isRotatedLine ? "" : `rotate(${90 * (index % 2 ? -1 : 1)}deg)`;
     if (isRotatedLine) {
       deleteDropdown();
     } else {
       createDropdownMenu();
     }
   });
+
+  const isRotatedLongLine =
+    longline.style.transform &&
+    longline.style.transform.includes("rotate(45deg)");
+
+  longline.style.transition = "transform 0.3s ease-in-out";
+  longline.style.transform = isRotatedLongLine ? "" : "rotate(45deg)";
 }
+
 document.querySelector(".Mobile_Dropdown_Menu").addEventListener("click", toggleDropdownMenu);
 
 
@@ -106,67 +117,68 @@ document.querySelector(".Mobile_Dropdown_Menu").addEventListener("click", toggle
 
 
 
-// Cards Creation! Thic creates cards based on data.
+
+// Cards Creation! Thic creates informational ` cards based on data.
 function Cards() {
   const CardDataObject = [
     {
-      imgSource: "img/ios.webp",
+      imgSource: "img/Cources/ios.webp",
       Name: "IOS Development",
       Reg: "რეგისტრაცია დასრულებულია",
       Detail: "კურსის დეტალები",
       link_To_Cource : "https://www.tbcacademy.ge/usaid/ios-development",
     },
     {
-      imgSource: "img/react.webp",
+      imgSource: "img/Cources/react.webp",
       Name: "React",
       Reg: "რეგისტრაცია დასრულებულია",
       Detail: "კურსის დეტალები",
       link_To_Cource :'https://www.tbcacademy.ge/usaid/react',
     },
     {
-      imgSource: "img/python.webp",
+      imgSource: "img/Cources/python.webp",
       Name: "Intro to Python",
       Reg: "რეგისტრაცია დასრულებულია",
       Detail: "კურსის დეტალები",
       link_To_Cource :'https://www.tbcacademy.ge/usaid/python-basic',
     },
     {
-      imgSource: "img/advancedpython.webp",
+      imgSource: "img/Cources/advancedpython.webp",
       Name: "Advanced Python",
       Reg: "რეგისტრაცია დასრულებულია",
       Detail: "კურსის დეტალები",
       link_To_Cource :'https://www.tbcacademy.ge/usaid/python-advance',
     },
     {
-      imgSource: "img/cybersecuryty.webp",
+      imgSource: "img/Cources/cybersecuryty.webp",
       Name: "Advanced Cybersecurity Course",
       Reg: "რეგისტრაცია დასრულებულია",
       Detail: "კურსის დეტალები",
       link_To_Cource :'https://www.tbcacademy.ge/usaid/information-security-advance',
     },
     {
-      imgSource: "img/ToT.webp",
+      imgSource: "img/Cources/ToT.webp",
       Name: "ToT - Training of Trainers",
       Reg: "რეგისტრაცია დასრულებულია",
       Detail: "კურსის დეტალები",
       link_To_Cource :'https://www.tbcacademy.ge/usaid/training-of-trainers',
     },
     {
-      imgSource: "img/blokchain.webp",
+      imgSource: "img/Cources/blokchain.webp",
       Name: "Blockchain",
       Reg: "რეგისტრაცია დასრულებულია",
       Detail: "კურსის დეტალები",
       link_To_Cource :'https://www.tbcacademy.ge/usaid/blockchain',
     },
     {
-      imgSource: "img/devops.webp",
+      imgSource: "img/Cources/devops.webp",
       Name: "DevOps",
       Reg: "რეგისტრაცია დასრულებულია",
       Detail: "კურსის დეტალები",
       link_To_Cource :'https://www.tbcacademy.ge/usaid/devops',
     },
     {
-      imgSource: "img/informationsecurity.webp",
+      imgSource: "img/Cources/informationsecurity.webp",
       Name: "Information Security Governance",
       Reg: "რეგისტრაცია დასრულებულია",
       Detail: "კურსის დეტალები",
@@ -179,11 +191,11 @@ function Cards() {
     Card.style.display = "flex";
     Card.style.flexDirection = "column";
     Card.style.width = "300px";
-    Card.style.height = "440px";
+    Card.style.height = "420px";
     Card.style.border = "1px solid grey";
     Card.style.backgroundColor = "rgb(23, 22, 22)";
     Card.style.zIndex = "0";
-    Card.style.borderRadius = "10px";
+    Card.style.borderRadius = "5px";
     Card.style.padding = "0";
     Card.style.margin = '20px'
 
@@ -191,7 +203,7 @@ function Cards() {
     ImgCard.style.width = "100%";
     ImgCard.style.height = "200px";
     ImgCard.src = data.imgSource;
-    ImgCard.style.borderTopLeftRadius = "10px";
+    ImgCard.style.borderTopLeftRadius = "5px";
     ImgCard.style.borderTopRightRadius = "10px";
 
     Card.appendChild(ImgCard);
@@ -202,15 +214,14 @@ function Cards() {
     DataContainer.style.display = "flex";
     DataContainer.style.flexDirection = "column";
     DataContainer.style.padding = "20px";
-    DataContainer.style.fontSize = "17px";
-    DataContainer.style.fontFamily = "sans-serif";
+    DataContainer.style.fontSize = "15px";
 
     Card.appendChild(DataContainer);
 
     const CourseName = document.createElement("p");
     CourseName.textContent = data.Name;
     CourseName.style.color = "white";
-    CourseName.style.fontSize = '20px';
+    CourseName.style.fontSize = '18px';
     CourseName.style.maxWidth ='90%';
 
     const Registration = document.createElement("p");
@@ -220,19 +231,21 @@ function Cards() {
 
     const arrowIMG = document.createElement("img");
     arrowIMG.style.width = "20px";
-    arrowIMG.src = 'img/BlueArrow.png'
+    arrowIMG.src = 'img/Icons&Logos/BlueArrow.png'
+    arrowIMG.style.paddingRight = '10px'
 
     const Details = document.createElement("a");
     Details.textContent = data.Detail;
     Details.href = data.link_To_Cource;
     Details.style.color = "rgb(95, 170, 245)";
+    Details.style.fontWeight = '600'
 
     Details.style.textDecoration = "none";
 
     const arrowDiv = document.createElement("div");
     arrowDiv.style.display = 'flex';
     arrowDiv.style.alignItems = 'center';
-    arrowDiv.style.paddingTop = "90px";
+    arrowDiv.style.paddingTop = "80px";
 
     arrowDiv.appendChild(arrowIMG);
     arrowDiv.appendChild(Details);
@@ -246,5 +259,93 @@ function Cards() {
     INfo_Cards.appendChild(Card);
   });
 }
-
 Cards();
+
+
+
+
+
+
+
+
+
+// slider! this code controls slider functional.
+
+const PartnerLogos = [
+  {
+    logo: "img/Partners/usaid-logo.png",
+  },
+  {
+    logo: "img/Partners/spaceint-logo.png",
+  },
+  {
+    logo: "img/Partners/tnet-logo.png",
+  },
+  {
+    logo: "img/Partners/tegeta-logo.png",
+  },
+  {
+    logo: "img/Partners/spectre-logo.png",
+  },
+  {
+    logo: "img/Partners/tbcleasing-logo.png",
+  },
+  {
+    logo: "img/Partners/ufc-logo.png",
+  },
+];
+
+const createSlider = () => {
+  let currentIndex = 0;
+  const leftArrow = document.querySelector(".left-arrow");
+  const rightArrow = document.querySelector(".right-arrow");
+  const dots = document.querySelectorAll(".dot");
+  dots.forEach((dot) => {
+    dot.addEventListener("click", () => {
+      currentIndex = dot.dataset.index;
+      displayPartnerImages(currentIndex);
+    });
+  });
+
+  leftArrow.addEventListener("click", () => {
+    currentIndex = currentIndex - 1 < 0 ? 2 : currentIndex - 1;
+    displayPartnerImages(currentIndex);
+  });
+
+  rightArrow.addEventListener("click", () => {
+    currentIndex = currentIndex + 1 > 2 ? 0 : currentIndex + 1;
+    displayPartnerImages(currentIndex);
+  });
+  setInterval(() => {
+    currentIndex = currentIndex + 1 > 2 ? 0 : currentIndex + 1;
+    displayPartnerImages(currentIndex);
+  }, 5000);
+  displayPartnerImages(currentIndex);
+};
+
+const displayPartnerImages = (slideNumber) => {
+  slideNumber *= 3;
+  const sliderParentElement = document.querySelector(".partners-list");
+  sliderParentElement.classList.remove("fade-in");
+  sliderParentElement.classList.add("fade-away");
+  setTimeout(() => {
+    sliderParentElement.innerHTML = "";
+    for (
+      let i = slideNumber;
+      i < Math.min(slideNumber + 3, PartnerLogos.length);
+      i++
+    ) {
+      const partnerElement = document.createElement("img");
+      partnerElement.classList.add("partner-logo");
+      partnerElement.src = PartnerLogos[i].logo;
+      sliderParentElement.appendChild(partnerElement);
+    }
+  }, 1000);
+  setTimeout(() => {
+    sliderParentElement.classList.add("fade-in");
+  }, 1000);
+};
+
+createSlider();
+
+//
